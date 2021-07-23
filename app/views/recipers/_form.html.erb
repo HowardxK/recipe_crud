@@ -1,0 +1,22 @@
+<% if reciper.errors.any? %>
+  <ul>
+    <% reciper.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for(reciper) do |form| %>
+  <div>
+    <%= form.label :title, class: 'label' %>
+    <%= form.text_field :title, class: 'input is-medium' %>
+  </div>
+
+  <div>
+    <%= form.label :content, class: 'label' %>
+    <%= form.text_area :content, class: 'textarea' %>
+  </div>
+  <hr>
+  <%= form.submit class: 'button is-primary' %>
+<% end %>
